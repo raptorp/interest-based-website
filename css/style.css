@@ -1,9 +1,413 @@
+/***** FONTS *****/
+
+@font-face {
+  font-family: "muli";
+  src: url("/font/muli.light.ttf");
+}
+
+@font-face {
+  font-family: "quattrocento";
+  src: url("/font/quattrocento-sans.regular.ttf");
+}
+
+:root {
+  --color-text: #1a1a1a;
+  --color-text-dark: #121212;
+  --color-primary: #edecea;
+  --color-primary-dark: #dddcda;
+  --color-accent: #dcd12e;
+  --color-accent-dark: #bdb328;
+  --ff-title: "quattrocento";
+  --ff-sans: "muli";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--ff-sans);
+  color: var(--color-text);
+  font-size: 1.125rem;
+}
+
 body {
+  margin: 0;
+  text-align: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  padding: 4em 1em;
+}
+
+.margin-buttom-0 {
+  margin-bottom: 0;
+}
+
+/***** TYPOGRAHY *****/
+
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
 }
 
-.backdrop {
-  background-image: url(../Image/dot.png);
+h2,
+h3 {
+  font-family: var(--ff-title);
+  line-height: 0.8;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: 0.85em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+q {
+  font-size: smaller;
+}
+
+.title__section-small {
+  font-size: 2rem;
+}
+
+.title__section-small small {
+  font-size: 0.6em;
+  display: block;
+}
+
+.title-patent {
+  color: var(--color-primary);
+  padding: 2em 0;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.logo-txt {
+  font-family: var(--ff-title);
+  text-align: center;
+}
+
+.logo-txt a {
+  color: var(--color-primary);
+}
+
+/***** NAVIGATION *****/
+
+header {
+  padding: 1em 0 2em;
+}
+
+.nav__header {
+  position: absolute;
   width: 100%;
-  height: 100vh;
+}
+
+.logo-container {
+  height: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.2vh;
+  margin-bottom: 1.5vh;
+}
+
+.logo-container img {
+  height: 100%;
+}
+
+.logo-txt {
+  margin-left: 0.25em;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5em;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/***** BUTTONS *****/
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button {
+  padding: 0.75em 2.5em;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  display: block;
+  margin: 0.5em 0;
+  border-radius: 0.3em;
+}
+
+.button-primary {
+  background: var(--color-text);
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  background: var(--color-accent-dark);
+}
+
+/***** PAGE STYLE *****/
+
+.landing {
+  background-color: #919191;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 15vh 1em;
+  height: 60vh;
+}
+
+.landing__index {
+  background-image: url(../img/duck-race-bw.jpg);
+}
+
+.landing__jokes {
+  background-image: url(../img/duck-upside-down_mobile.jpg);
+}
+
+.landing__history {
+  background-image: url(../img/duck-banner-bw.png);
+}
+
+.landing h2 {
+  padding-top: 6.5rem;
+}
+
+.fact-large-duck,
+.fact-patent {
+  background: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  color: var(--color-primary);
+  padding: 0;
+}
+
+.fact-large-duck__intro {
+  background-image: url(../img/rubber-duck_osaka-big.jpg);
+}
+
+.fact-patent__intro {
+  background-image: url(../img/patent.jpg);
+  background-color: #919191;
+  background-blend-mode: multiply;
+}
+
+.fact-large-duck__intro,
+.fact-patent__intro {
+  background-size: cover;
+  padding: 3em 1em 1.6em;
+}
+
+.fact-large-duck__body,
+.fact-patent__body {
+  padding: 1.6em 1em 3em;
+}
+
+.joke-left,
+.joke-right {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1.8em;
+}
+
+.duck-fact {
+  background: var(--color-primary);
+}
+
+footer {
+  background: var(--color-accent);
+  padding: 3em 1em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  /*margin-top: 3em;*/
+}
+.footer a {
+  color: inherit;
+}
+
+.nav__footer,
+.social__footer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__footer a,
+.social__footer a {
+  padding: 0.75em;
+  text-decoration: none;
+}
+
+.nav__footer a:hover,
+.nav__footer a:focus,
+.social__footer a:hover,
+.social__footer a:focus {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 750px) {
+  section {
+    padding: 20vh 1em;
+  }
+
+  .nav__header {
+    padding: 3em 1em 2em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo-container {
+    justify-content: left;
+    margin: 0;
+    padding-left: 1em;
+  }
+
+  .nav__header > nav {
+    padding-right: 1em;
+  }
+
+  .quote {
+    padding: 0 16vw;
+  }
+
+  .landing {
+    height: 100vh;
+    padding-top: 30vh;
+    padding-right: 50vw;
+    padding-left: 6vw;
+    text-align: left;
+  }
+
+  .landing__index {
+    background-image: url(../img/duck-race-bw.jpg);
+  }
+  .landing__jokes {
+    background-image: url(../img/duck-upside-down.jpg);
+  }
+
+  .button-group {
+    margin-top: 1em;
+    flex-direction: row;
+  }
+
+  .button + .button {
+    margin-left: 0.5em;
+  }
+
+  .fact-large-duck,
+  .fact-patent {
+    flex-direction: row;
+  }
+
+  .fact-large-duck__intro,
+  .fact-large-duck__body,
+  .fact-patent__intro,
+  .fact-patent__body {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 4em 2em;
+    justify-content: center;
+  }
+
+  .fact-large-duck__intro,
+  .fact-patent__intro {
+    text-align: right;
+  }
+
+  .fact-large-duck__intro > *,
+  .fact-patent__intro > * {
+    max-width: 27rem;
+    margin-left: auto;
+  }
+
+  .fact-large-duck__body,
+  .fact-patent__body {
+    text-align: left;
+  }
+
+  .fact-large-duck__body > *,
+  .fact-patent__body > * {
+    max-width: 27rem;
+    margin-right: auto;
+  }
+
+  .duck-fact > * {
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .duck-fact {
+    display: grid;
+  }
+
+  .joke {
+    margin-top: 30vh;
+  }
+
+  .joke-first {
+    padding-bottom: 20vh;
+  }
+
+  .joke-left {
+    padding-left: 8vw;
+    text-align: left;
+  }
+
+  .joke-right {
+    padding-right: 8vw;
+    text-align: right;
+  }
 }
